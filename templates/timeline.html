@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>LW manuscript timeline</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<style>
+  body {
+    margin: 0;
+    padding: 24px;
+    background: #EFEDE4;
+    font-family: system-ui, sans-serif;
+  }
+  #card {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #FBFAF6;
+    border: 1px solid #E3E1D8;
+    border-radius: 10px;
+    padding: 16px 18px 20px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+  }
+  #topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  #legend { display: flex; gap: 14px; }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .legend-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+  .legend-label { font-size: 12px; color: #5F5E5A; }
+  #controls { display: flex; gap: 6px; }
+  button.zoom-btn {
+    width: 26px; height: 26px; border-radius: 6px;
+    border: 1px solid #D8D6CC; background: #FFFFFF; color: #2C2C2A;
+    font-size: 14px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  }
+  button.zoom-btn:hover { background: #F1EFE8; }
+  #reset-btn { width: auto; font-size: 11px; padding: 0 10px; }
+  #hint { font-size: 11px; color: #8A8877; margin-top: 4px; }
+  svg { display: block; width: 100%; overflow: visible; }
+  .tick text { font-family: system-ui, sans-serif; }
+  #tooltip {
+    position: absolute;
+    background: #2C2C2A;
+    color: #FBFAF6;
+    padding: 8px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    max-width: 260px;
+    line-height: 1.4;
+    pointer-events: none;
+    display: none;
+    z-index: 10;
+  }
+  #tooltip .tt-date { font-weight: 600; margin-bottom: 2px; }
+  #legend { display: flex; gap: 14px; margin-bottom: 8px; }
+.legend-item { display: flex; align-items: center; gap: 6px; }
+.legend-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.legend-label { font-size: 12px; color: #5F5E5A; font-family: system-ui, sans-serif; }
+</style>
+</head>
+<body>
+
+<div id="card">
+  <div id="topbar">
+    <div id="legend"></div>
+    <div id="controls">
+      <button class="zoom-btn" id="zoom-out" aria-label="Zoom out">&minus;</button>
+      <button class="zoom-btn" id="reset-btn">Reset</button>
+      <button class="zoom-btn" id="zoom-in" aria-label="Zoom in">+</button>
+    </div>
+  </div>
+  <svg id="chart"></svg>
+  <div id="hint">Scroll or pinch to zoom, drag to pan, or drag the strip below to jump to a range.</div>
+  <div id="tooltip"></div>
+</div>
+
+<script src="static/timeline_data.js"></script>
+
+</body>
+</html>

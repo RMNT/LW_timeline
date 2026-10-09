@@ -1,0 +1,14 @@
+.venv/
+node_modules/
+__pycache__/
+*.pyc
+.vscode/
+static/timeline_data.js
+static/raw_data.js
+read_gsp*
+*.csv
+*/mano_grafikas.png
+try_queries.py
+try_only_one_before_after.py
+templates/chart.html
+templates/details.html
