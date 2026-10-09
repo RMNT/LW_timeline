@@ -39,7 +39,7 @@ so it needs an internet connection.
 
 The data file `read_gsp` is not included in this repository.
 
-> Add here: where to download it, which version, and its licence / terms of use.
+> Download it from https://wab.uib.no/
 
 ## Files
 
