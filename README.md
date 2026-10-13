@@ -17,8 +17,7 @@ You need Python 3 and the data file (see below).
 
 ```
 python -m venv .venv
-.venv\Scripts\activate          # on macOS/Linux: source .venv/bin/activate
-pip install -r requirements.txt
+.venv\Scripts\python -m pip install -r requirements.txt
 ```
 
 1. Put the data file, named `read_gsp`, in this folder (next to `main.py`).
