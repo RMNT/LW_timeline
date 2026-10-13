@@ -24,7 +24,7 @@ python -m venv .venv
 2. Start the server **from this folder**:
 
    ```
-   uvicorn main:app
+   .venv\Scripts\python -m uvicorn main:app
    ```
 
 3. Open <http://127.0.0.1:8000/timeline>.
